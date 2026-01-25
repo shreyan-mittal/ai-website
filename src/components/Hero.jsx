@@ -122,7 +122,7 @@ export function Hero() {
           >
             <div className="aspect-[16/9] w-full">
               <img
-                src="/src/assets/screen.png"
+                src="/screen.png"
                 alt="AI Platform Dashboard"
                 className="h-full w-full object-cover"
                 loading="lazy"
