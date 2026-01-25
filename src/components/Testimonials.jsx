@@ -7,16 +7,26 @@ export function Contact() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
+
+    // ✅ capture form element immediately (prevents "reset of null")
+    const formEl = e.currentTarget
+
     setStatus({ type: "loading", msg: "Sending…" })
 
     try {
-      const form = new FormData(e.currentTarget)
+      const form = new FormData(formEl)
       const payload = {
         full_name: String(form.get("full_name") || "").trim(),
         work_email: String(form.get("work_email") || "").trim(),
         company: String(form.get("company") || "").trim(),
         need: String(form.get("need") || "").trim(),
         message: String(form.get("message") || "").trim(),
+      }
+
+      // ✅ frontend validation (matches backend required fields)
+      if (!payload.full_name || !payload.work_email || !payload.message) {
+        setStatus({ type: "error", msg: "Please fill Full name, Work email, and Message." })
+        return
       }
 
       const res = await fetch("/api/contact", {
@@ -26,12 +36,23 @@ export function Contact() {
       })
 
       const data = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(data?.error || "Failed to send message")
+
+      if (!res.ok) {
+        // helpful error message
+        throw new Error(data?.error || `Failed to send message (status ${res.status})`)
+      }
 
       setStatus({ type: "success", msg: "Thanks! We’ll reach out within 24 hours." })
-      e.currentTarget.reset()
+
+      // ✅ reset safely
+      if (formEl && typeof formEl.reset === "function") {
+        formEl.reset()
+      }
     } catch (err) {
-      setStatus({ type: "error", msg: err?.message || "Something went wrong. Please try again." })
+      setStatus({
+        type: "error",
+        msg: err?.message || "Something went wrong. Please try again.",
+      })
     }
   }
 
@@ -194,14 +215,14 @@ export function Contact() {
                   whileHover={{ y: -2, scale: 1.01 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                disabled={status.type === "loading"}
-                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  disabled={status.type === "loading"}
+                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-60"
                 >
-                {status.type === "loading" ? "Sending…" : "Send message"}
+                  {status.type === "loading" ? "Sending…" : "Send message"}
                 </motion.button>
               </div>
 
-            {(status.type === "success" || status.type === "error") && (
+              {(status.type === "success" || status.type === "error") && (
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
                   {status.msg}
                 </div>
