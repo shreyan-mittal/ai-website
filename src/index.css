@@ -24,3 +24,8 @@ body {
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   pointer-events: none;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+

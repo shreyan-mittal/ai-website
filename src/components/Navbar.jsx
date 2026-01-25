@@ -39,13 +39,15 @@ export function Navbar() {
     return [
       "mx-auto flex max-w-6xl items-center justify-between px-6",
       "rounded-2xl border",
-      scrolled ? "border-white/10 bg-[#0b0d12]/70 backdrop-blur" : "border-transparent bg-transparent",
+      scrolled
+        ? "border-white/10 bg-[#0b0d12]/70 backdrop-blur"
+        : "border-transparent bg-transparent",
       "shadow-none",
     ].join(" ")
   }, [scrolled])
 
   const linkClass =
-    "text-sm font-semibold text-white/70 transition hover:text-white"
+    "group relative px-2 py-1 text-sm font-semibold text-white/70 transition-colors duration-300 hover:text-white"
 
   return (
     <header className={containerClass}>
@@ -73,7 +75,10 @@ export function Navbar() {
         <nav className="hidden items-center gap-7 md:flex">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} className={linkClass}>
-              {l.label}
+              <span className="relative">
+                {l.label}
+                <span className="absolute inset-x-0 -bottom-1 h-[2px] origin-left scale-x-0 bg-white/80 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+              </span>
             </a>
           ))}
 
@@ -123,7 +128,7 @@ export function Navbar() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
                     <span className="text-sm font-semibold text-white">AI</span>
                   </div>
-                  <p className="text-sm font-semibold">Your Company</p>
+                  <p className="text-sm font-semibold text-white">Your Company</p>
                 </div>
 
                 <button
@@ -141,10 +146,15 @@ export function Navbar() {
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 transition hover:bg-white/10"
+                    className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 transition-all duration-300 hover:-translate-y-[1px] hover:bg-white/10"
                   >
-                    {l.label}
-                    <span className="text-white/40">→</span>
+                    <span className="relative">
+                      {l.label}
+                      <span className="absolute inset-x-0 -bottom-1 h-[2px] origin-left scale-x-0 bg-white/70 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                    </span>
+                    <span className="text-white/40 transition-colors duration-300 group-hover:text-white/70">
+                      →
+                    </span>
                   </a>
                 ))}
               </div>
