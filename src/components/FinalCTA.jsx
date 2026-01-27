@@ -47,11 +47,10 @@ export function Footer() {
           {/* Brand */}
           <motion.div variants={fadeInUp} className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <Logo className="h-12 w-12" />
+              <div className="relative h-6 w-[120px]">
+                <Logo className="h-6 w-auto" />
+              </div>
               <div>
-                <p className="text-base font-display font-semibold tracking-wide">
-                  Agilo Labs
-                </p>
                 <p className="text-xs text-white/60 font-sans font-medium tracking-wide">AI solutions • GenAI • CV • MLOps</p>
               </div>
             </div>
@@ -134,7 +133,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col gap-4 py-8 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-2">
-            <p>© {year} Agilo Labs. All rights reserved.</p>
+            <p>© {year} Intelidge. All rights reserved.</p>
             <p>Based in Vadodara, India — delivering AI solutions globally.</p>
           </div>
 

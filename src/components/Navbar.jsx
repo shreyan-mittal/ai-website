@@ -63,12 +63,8 @@ export function Navbar() {
             setOpen(false)
           }}
         >
-          <Logo className="h-12 w-12" />
-          <div className="leading-tight">
-            <p className="text-sm font-display font-semibold text-white tracking-wide">
-              Agilo Labs
-            </p>
-            <p className="text-xs text-white/50 font-sans font-medium tracking-wide">AI Solutions Studio</p>
+          <div className="relative h-7 w-[140px]">
+            <Logo className="h-7 w-auto" />
           </div>
         </a>
 
@@ -126,10 +122,9 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Logo className="h-12 w-12" />
-                  <p className="text-sm font-display font-semibold text-white tracking-wide">
-                    Agilo Labs
-                  </p>
+                  <div className="relative h-6 w-[120px]">
+                    <Logo className="h-6 w-auto" />
+                  </div>
                 </div>
 
                 <button
