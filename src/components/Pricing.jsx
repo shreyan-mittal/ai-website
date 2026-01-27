@@ -90,7 +90,7 @@ export function Engagement() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="max-w-3xl"
+          className="mx-auto max-w-3xl text-center"
         >
           <motion.span
             variants={fadeInUp}
