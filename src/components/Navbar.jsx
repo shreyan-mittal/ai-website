@@ -41,7 +41,7 @@ export function Navbar() {
       "mx-auto flex max-w-6xl items-center justify-between px-6",
       "rounded-2xl border",
       scrolled
-        ? "border-white/10 bg-[#0b0d12]/70 backdrop-blur"
+        ? "border-white/10 bg-indigo-950/80 backdrop-blur"
         : "border-transparent bg-transparent",
       "shadow-none",
     ].join(" ")
@@ -122,7 +122,7 @@ export function Navbar() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -18, opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="relative mx-4 mt-4 rounded-3xl border border-white/10 bg-[#0b0d12] p-4 shadow-2xl"
+              className="relative mx-4 mt-4 rounded-3xl border border-white/10 bg-indigo-950 p-4 shadow-2xl"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
