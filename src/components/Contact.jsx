@@ -147,7 +147,7 @@ export function Contact() {
             variants={item}
             className="mt-4 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-5xl"
           >
-            Let's build something intelligent—
+            Let's build something intelligent
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
               securely

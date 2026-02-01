@@ -183,7 +183,7 @@ export function Engagement() {
             variants={fadeInUp}
             className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
           >
-            Clarity before code—so your AI{" "}
+            Clarity before code so your AI{" "}
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
               actually works in production
             </span>

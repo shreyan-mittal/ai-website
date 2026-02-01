@@ -130,7 +130,7 @@ export function Footer() {
             </div>
 
             <p className="mb-8 max-w-md text-base leading-relaxed text-white/70">
-              We build secure, production-ready AI systems—strategy to deployment—designed for measurable
+              We build secure, production ready AI systems from strategy to deployment. Designed for measurable
               outcomes across accuracy, latency, cost, and adoption.
             </p>
 

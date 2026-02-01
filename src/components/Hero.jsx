@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { fadeInUp, staggerContainer } from "./animations"
 import { Brain, Sparkles, Zap, Network, Database, Cpu, ArrowRight, Play, Shield, TrendingUp } from "lucide-react"
 import { useState } from "react"
+import dashboardImg from "../assets/screen.png"
+
 
 const floatingIcons = [
   { Icon: Brain, x: "10%", y: "18%", delay: 0.0, size: 56, rotation: 5 },
@@ -457,11 +459,11 @@ export function Hero() {
               <div className="relative overflow-hidden rounded-xl bg-white">
                 <div className="aspect-[16/9] w-full">
                   <motion.img
-                    src="/src/assets/screen.png"
+                    src={dashboardImg}
                     alt="AI Platform Dashboard"
                     className="h-full w-full object-cover transition-transform duration-700 
                              group-hover:scale-[1.02]"
-                    loading="lazy"
+                    loading="eager"
                   />
                 </div>
               </div>
