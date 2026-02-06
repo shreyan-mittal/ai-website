@@ -346,7 +346,8 @@ export function Footer() {
               />
             </motion.a>
 
-            <motion.a
+            {/* TWITTER ICON */}
+            {/* <motion.a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -362,9 +363,10 @@ export function Footer() {
               <motion.div
                 className="absolute inset-0 rounded-full bg-cyan-500/0 transition-all duration-300 group-hover:bg-cyan-500/20 blur-xl"
               />
-            </motion.a>
+            </motion.a> */}
 
-            <motion.a
+            {/* GITHUB ICON */}
+            {/* <motion.a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -380,7 +382,7 @@ export function Footer() {
               <motion.div
                 className="absolute inset-0 rounded-full bg-indigo-500/0 transition-all duration-300 group-hover:bg-indigo-500/20 blur-xl"
               />
-            </motion.a>
+            </motion.a> */}
           </div>
         </motion.div>
       </div>
