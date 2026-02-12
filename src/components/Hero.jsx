@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { fadeInUp, staggerContainer } from "./animations"
 import { Brain, Sparkles, Zap, Network, Database, Cpu, ArrowRight, Play, Shield, TrendingUp } from "lucide-react"
 import { useState } from "react"
@@ -25,10 +25,7 @@ const particles = Array.from({ length: 12 }, (_, i) => ({
 
 export function Hero() {
   const [isHovering, setIsHovering] = useState(false)
-  const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, 500], [0, 100])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.3])
-
+  
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#07090f] via-[#0a0d14] to-[#07090f] pt-40 pb-24 text-white">
 
@@ -115,10 +112,7 @@ export function Hero() {
       </div>
 
       {/* CONTENT */}
-      <motion.div
-        className="relative z-20 mx-auto max-w-5xl px-6 text-center"
-        style={{ y, opacity }}
-      >
+      <div className="relative z-20 mx-auto max-w-5xl px-6 text-center">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -254,13 +248,13 @@ export function Hero() {
           >
             <motion.div
               animate={isHovering ? { y: -6 } : { y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="relative overflow-hidden rounded-2xl
                          border border-slate-800/50
                          bg-gradient-to-br from-slate-900/50 via-slate-900/30 to-slate-900/50
                          p-1 shadow-2xl shadow-black/40
                          transition-all duration-500
-                         group-hover:border-slate-700/50"
+                         group-hover:border-slate-700/50 transform-gpu"
               style={{ willChange: 'transform' }}
             >
               <div className="relative overflow-hidden rounded-xl bg-white">
@@ -268,7 +262,8 @@ export function Hero() {
                   <img
                     src={dashboardImg}
                     alt="AI Platform Dashboard"
-                    className="h-full w-full object-cover transition-transform duration-700
+                    className="h-full w-full object-cover transform-gpu
+                             transition-transform duration-700 ease-out
                              group-hover:scale-[1.02]"
                     loading="eager"
                   />
@@ -332,7 +327,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Lightweight CSS keyframes */}
       <style>{`

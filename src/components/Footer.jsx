@@ -45,7 +45,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#07090f] via-[#0a0d14] to-[#05070e] text-white">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-[#07090f] via-[#0a0d14] to-[#05070e] text-white">
       {/* Enhanced background - matching hero */}
       <div className="pointer-events-none absolute inset-0">
         {/* Animated blue gradient */}
@@ -62,7 +62,7 @@ export function Footer() {
           className="absolute -top-48 left-1/4 h-[600px] w-[600px] rounded-full 
                      bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.2),rgba(59,130,246,0.1)_40%,transparent_70%)] blur-3xl"
         />
-        
+
         {/* Animated cyan gradient */}
         <motion.div
           animate={{
@@ -113,7 +113,7 @@ export function Footer() {
         >
           {/* Brand column - enhanced */}
           <motion.div variants={item} className="md:col-span-5">
-            <motion.div 
+            <motion.div
               className="mb-6"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
@@ -136,7 +136,7 @@ export function Footer() {
 
             {/* Enhanced info badges */}
             <div className="mb-8 space-y-3">
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-3 text-sm text-white/60"
                 whileHover={{ x: 4, transition: { duration: 0.2 } }}
               >
@@ -146,7 +146,7 @@ export function Footer() {
                 <span>Based in Vadodara, India 🇮🇳. Delivering globally</span>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-3 text-sm text-white/60"
                 whileHover={{ x: 4, transition: { duration: 0.2 } }}
               >
@@ -156,7 +156,7 @@ export function Footer() {
                 <span>Response within 24 hours</span>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-3 text-sm text-white/60"
                 whileHover={{ x: 4, transition: { duration: 0.2 } }}
               >
@@ -181,7 +181,7 @@ export function Footer() {
                   Get in Touch
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
-                
+
                 {/* Animated gradient overlay */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -339,7 +339,7 @@ export function Footer() {
                        hover:border-blue-400/50 hover:bg-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30"
             >
               <Linkedin className="h-4 w-4 text-white/70 transition-colors duration-300 group-hover:text-white" />
-              
+
               {/* Glow effect */}
               <motion.div
                 className="absolute inset-0 rounded-full bg-blue-500/0 transition-all duration-300 group-hover:bg-blue-500/20 blur-xl"
@@ -359,7 +359,7 @@ export function Footer() {
                        hover:border-cyan-400/50 hover:bg-cyan-500/20 hover:shadow-lg hover:shadow-cyan-500/30"
             >
               <Twitter className="h-4 w-4 text-white/70 transition-colors duration-300 group-hover:text-white" />
-              
+
               <motion.div
                 className="absolute inset-0 rounded-full bg-cyan-500/0 transition-all duration-300 group-hover:bg-cyan-500/20 blur-xl"
               />
@@ -378,7 +378,7 @@ export function Footer() {
                        hover:border-indigo-400/50 hover:bg-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30"
             >
               <Github className="h-4 w-4 text-white/70 transition-colors duration-300 group-hover:text-white" />
-              
+
               <motion.div
                 className="absolute inset-0 rounded-full bg-indigo-500/0 transition-all duration-300 group-hover:bg-indigo-500/20 blur-xl"
               />

@@ -81,52 +81,35 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-32 text-slate-900">
-      {/* Enhanced background */}
+    <section id="contact" className="relative overflow-hidden bg-[#07090f] py-32 text-white">
+      {/* OPTIMIZED Background - CSS animations */}
       <div className="pointer-events-none absolute inset-0">
         {/* Primary blue gradient */}
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.12, 0.2, 0.12],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+        <div
           className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full 
                      bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_65%)] blur-3xl"
+          style={{ animation: 'pulse-glow 8s ease-in-out infinite' }}
         />
-        
+
         {/* Secondary cyan gradient */}
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.1, 0.18, 0.1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
+        <div
           className="absolute -bottom-48 left-1/4 h-[500px] w-[500px] rounded-full 
                      bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.12),transparent_65%)] blur-3xl"
+          style={{ animation: 'pulse-glow 10s ease-in-out infinite 1s' }}
         />
 
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.35]
-                     [background-image:linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),
-                                          linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)]
+          className="absolute inset-0 opacity-[0.15]
+                     [background-image:linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),
+                                          linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)]
                      [background-size:64px_64px]
                      [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_90%)]"
         />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6">
-        {/* Enhanced Header */}
+        {/* Header */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -136,8 +119,8 @@ export function Contact() {
         >
           <motion.div variants={item} className="mb-4 flex items-center justify-center gap-2">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-blue-500" />
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-600 ring-1 ring-blue-100">
-              <Mail className="h-3.5 w-3.5" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-700/50 bg-slate-900/40 px-4 py-1.5 text-sm font-medium text-slate-300 backdrop-blur-xl">
+              <Mail className="h-3.5 w-3.5 text-blue-400" />
               Contact
             </span>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-blue-500" />
@@ -149,14 +132,14 @@ export function Contact() {
           >
             Let's build something intelligent
             <br />
-            <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-slate-200 via-blue-100 to-slate-200 bg-clip-text text-transparent">
               securely
             </span>
           </motion.h2>
 
           <motion.p
             variants={item}
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl"
+            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl"
           >
             Tell us what you want to automate or improve. We'll recommend the fastest path to a
             production-ready solution.
@@ -164,32 +147,21 @@ export function Contact() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-          {/* Left: Enhanced Info panel */}
+          {/* Left: Info panel */}
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-xl shadow-slate-900/5 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-900/10"
+            className="group relative overflow-hidden rounded-3xl border border-slate-800/50 bg-slate-900/50 p-8 shadow-xl shadow-black/40 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20"
           >
-            {/* Animated gradient background on hover */}
-            <motion.div
-              initial={{ opacity: 0, scale: 1 }}
-              whileHover={{ opacity: 1, scale: 1.5 }}
-              transition={{ duration: 0.5 }}
-              className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full blur-3xl"
-              style={{
-                background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%)',
-              }}
-            />
-
             <motion.div variants={item} className="relative">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 px-3 py-1 text-xs font-semibold text-white shadow-lg shadow-blue-500/30">
                 <Sparkles className="h-3 w-3" />
                 What happens next?
               </div>
 
-              <h3 className="text-2xl font-semibold text-slate-900">Your journey with us</h3>
+              <h3 className="text-2xl font-semibold text-white">Your journey with us</h3>
             </motion.div>
 
             <motion.ul variants={item} className="relative mt-6 space-y-4">
@@ -205,7 +177,7 @@ export function Contact() {
                   <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/30">
                     <CheckCircle2 className="h-4 w-4 text-white" />
                   </div>
-                  <span className="flex-1 text-sm leading-relaxed text-slate-600">{text}</span>
+                  <span className="flex-1 text-sm leading-relaxed text-slate-400">{text}</span>
                 </motion.li>
               ))}
             </motion.ul>
@@ -214,72 +186,57 @@ export function Contact() {
               <motion.div
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="group/card relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-md hover:shadow-blue-100/50"
+                className="group/card relative overflow-hidden rounded-2xl border border-slate-800/50 bg-slate-900/50 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-blue-700/50 hover:shadow-md hover:shadow-blue-900/20"
               >
                 <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/20">
                   <Clock className="h-5 w-5 text-white" />
                 </div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Response time</p>
-                <p className="mt-2 text-xl font-semibold text-slate-900">Within 24 hours</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Response time</p>
+                <p className="mt-2 text-xl font-semibold text-white">Within 24 hours</p>
                 <p className="mt-1 text-xs text-slate-500">Mon–Sat</p>
               </motion.div>
 
               <motion.div
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="group/card relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5 shadow-sm transition-all duration-300 hover:border-cyan-200 hover:shadow-md hover:shadow-cyan-100/50"
+                className="group/card relative overflow-hidden rounded-2xl border border-slate-800/50 bg-slate-900/50 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-cyan-700/50 hover:shadow-md hover:shadow-cyan-900/20"
               >
                 <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/20">
                   <Target className="h-5 w-5 text-white" />
                 </div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Best for</p>
-                <p className="mt-2 text-xl font-semibold text-slate-900">AI MVPs & Scale</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Best for</p>
+                <p className="mt-2 text-xl font-semibold text-white">AI MVPs & Scale</p>
                 <p className="mt-1 text-xs text-slate-500">GenAI • CV • Automation</p>
               </motion.div>
             </motion.div>
-
-            {/* Corner glows */}
-            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08),transparent_60%)] blur-3xl" />
-            <div className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.06),transparent_60%)] blur-3xl" />
           </motion.div>
 
-          {/* Right: Enhanced Form */}
+          {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-xl shadow-slate-900/5 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-900/10"
+            className="group relative overflow-hidden rounded-3xl border border-slate-800/50 bg-slate-900/50 p-8 shadow-xl shadow-black/40 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20"
           >
-            {/* Animated gradient background */}
-            <motion.div
-              initial={{ opacity: 0, scale: 1 }}
-              whileHover={{ opacity: 1, scale: 1.5 }}
-              transition={{ duration: 0.5 }}
-              className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full blur-3xl"
-              style={{
-                background: 'radial-gradient(circle at center, rgba(6, 182, 212, 0.1), transparent 70%)',
-              }}
-            />
-
             <form onSubmit={onSubmit} className="relative space-y-5">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                    <User className="h-3.5 w-3.5 text-blue-600" />
+                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                    <User className="h-3.5 w-3.5 text-blue-400" />
                     Full name
                   </label>
                   <input
                     required
                     name="full_name"
                     placeholder="Your name"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-blue-400 focus:bg-white focus:shadow-md focus:shadow-blue-100/50 focus:ring-2 focus:ring-blue-100"
+                    className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-blue-500/50 focus:bg-slate-800 focus:shadow-md focus:shadow-blue-500/20 focus:ring-2 focus:ring-blue-500/20"
                   />
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                    <Mail className="h-3.5 w-3.5 text-blue-600" />
+                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                    <Mail className="h-3.5 w-3.5 text-blue-400" />
                     Work email
                   </label>
                   <input
@@ -287,46 +244,46 @@ export function Contact() {
                     type="email"
                     name="work_email"
                     placeholder="you@company.com"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-blue-400 focus:bg-white focus:shadow-md focus:shadow-blue-100/50 focus:ring-2 focus:ring-blue-100"
+                    className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-blue-500/50 focus:bg-slate-800 focus:shadow-md focus:shadow-blue-500/20 focus:ring-2 focus:ring-blue-500/20"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                    <Building2 className="h-3.5 w-3.5 text-blue-600" />
+                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                    <Building2 className="h-3.5 w-3.5 text-blue-400" />
                     Company
                   </label>
                   <input
                     name="company"
                     placeholder="Company name"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-blue-400 focus:bg-white focus:shadow-md focus:shadow-blue-100/50 focus:ring-2 focus:ring-blue-100"
+                    className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-blue-500/50 focus:bg-slate-800 focus:shadow-md focus:shadow-blue-500/20 focus:ring-2 focus:ring-blue-500/20"
                   />
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                    <Target className="h-3.5 w-3.5 text-blue-600" />
+                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                    <Target className="h-3.5 w-3.5 text-blue-400" />
                     What do you need?
                   </label>
                   <select
                     name="need"
                     defaultValue="GenAI / Agents"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-300 focus:border-blue-400 focus:bg-white focus:shadow-md focus:shadow-blue-100/50 focus:ring-2 focus:ring-blue-100"
+                    className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-sm text-white outline-none transition-all duration-300 focus:border-blue-500/50 focus:bg-slate-800 focus:shadow-md focus:shadow-blue-500/20 focus:ring-2 focus:ring-blue-500/20"
                   >
-                    <option>GenAI / Agents</option>
-                    <option>Computer Vision</option>
-                    <option>Automation / ML</option>
-                    <option>MLOps / Deployment</option>
-                    <option>Consulting / Strategy</option>
+                    <option className="bg-slate-900 text-white">GenAI / Agents</option>
+                    <option className="bg-slate-900 text-white">Computer Vision</option>
+                    <option className="bg-slate-900 text-white">Automation / ML</option>
+                    <option className="bg-slate-900 text-white">MLOps / Deployment</option>
+                    <option className="bg-slate-900 text-white">Consulting / Strategy</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <MessageSquare className="h-3.5 w-3.5 text-blue-600" />
+                <label className="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                  <MessageSquare className="h-3.5 w-3.5 text-blue-400" />
                   Message
                 </label>
                 <textarea
@@ -334,7 +291,7 @@ export function Contact() {
                   name="message"
                   rows={5}
                   placeholder="Tell us about your use-case, data (if any), timeline, and success metrics."
-                  className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-blue-400 focus:bg-white focus:shadow-md focus:shadow-blue-100/50 focus:ring-2 focus:ring-blue-100"
+                  className="mt-2 w-full resize-none rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-blue-500/50 focus:bg-slate-800 focus:shadow-md focus:shadow-blue-500/20 focus:ring-2 focus:ring-blue-500/20"
                 />
               </div>
 
@@ -348,7 +305,7 @@ export function Contact() {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={status.type === "loading"}
-                  className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-blue-600/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/50 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-blue-900/40 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/60 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     {status.type === "loading" ? "Sending…" : "Send message"}
@@ -356,12 +313,12 @@ export function Contact() {
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     )}
                   </span>
-                  
+
                   {/* Animated gradient overlay */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
-                  
+
                   {/* Shimmer effect */}
                   {status.type !== "loading" && (
                     <motion.div
@@ -377,11 +334,10 @@ export function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  className={`rounded-xl border px-5 py-4 text-sm ${
-                    status.type === "success"
-                      ? "border-green-200 bg-green-50 text-green-800"
-                      : "border-red-200 bg-red-50 text-red-800"
-                  }`}
+                  className={`rounded-xl border px-5 py-4 text-sm ${status.type === "success"
+                      ? "border-green-500/20 bg-green-500/10 text-green-300"
+                      : "border-red-500/20 bg-red-500/10 text-red-300"
+                    }`}
                 >
                   <div className="flex items-center gap-2">
                     {status.type === "success" ? (
@@ -401,9 +357,13 @@ export function Contact() {
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="pointer-events-none absolute left-0 top-1/3 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 bottom-1/4 h-64 w-64 rounded-full bg-cyan-500/5 blur-3xl" />
+      {/* CSS keyframes */}
+      <style>{`
+        @keyframes pulse-glow {
+          0%, 100% { opacity: 0.6; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.15); }
+        }
+      `}</style>
     </section>
   )
 }
