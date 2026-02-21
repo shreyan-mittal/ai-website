@@ -7,7 +7,7 @@ export function Logo({ className = "h-7 w-auto", ...props }) {
   return (
     <>
       <img
-        src="/brand/intelidge.png"
+        src="/logo.png"
         alt="Intelidge"
         className={`object-contain ${className}`}
         onError={() => setImgError(true)}

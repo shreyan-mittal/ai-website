@@ -82,7 +82,7 @@ const services = [
 /* ---------------- Component ---------------- */
 export function ServicesBento() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#07090f] via-[#0a0d14] to-[#07090f] py-32 text-white">
+    <section id= "services"className="relative overflow-hidden bg-gradient-to-b from-[#07090f] via-[#0a0d14] to-[#07090f] py-32 text-white">
       {/* OPTIMIZED Background - CSS animations only */}
       <div className="pointer-events-none absolute inset-0">
         {/* Primary blue gradient */}

@@ -80,8 +80,8 @@ export function Navbar() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <div className="relative h-8 w-[140px]">
-            <Logo className="h-8 w-auto" />
+          <div className="relative flex items-center">
+          <Logo className="h-12 w-auto -translate-y-[7px]" />
           </div>
         </motion.a>
 

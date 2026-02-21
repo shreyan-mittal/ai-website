@@ -1,36 +1,35 @@
 export const staggerContainer = {
-  hidden: { opacity: 0 },
+  hidden: {},
   show: {
-    opacity: 1,
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.1,
       delayChildren: 0.1,
     },
   },
 }
 
 export const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 18 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.65,
       ease: [0.22, 1, 0.36, 1],
     },
   },
 }
 
 export const cardVariant = {
-  hidden: { opacity: 0, y: 24, scale: 0.98 },
+  hidden: { opacity: 0, y: 20, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
       type: "spring",
-      stiffness: 120,
-      damping: 16,
+      stiffness: 110,
+      damping: 20,
     },
   },
 }
@@ -38,7 +37,7 @@ export const cardVariant = {
 export const floatVariant = {
   initial: { y: 0 },
   animate: {
-    y: [-4, 6, -4],
+    y: [-3, 3, -3],
     transition: {
       duration: 6,
       repeat: Infinity,
@@ -48,12 +47,12 @@ export const floatVariant = {
 }
 
 export const fadeScale = {
-  hidden: { opacity: 0, scale: 0.92 },
+  hidden: { opacity: 0, scale: 0.95 },
   show: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.8,
+      duration: 0.7,
       ease: [0.22, 1, 0.36, 1],
     },
   },
