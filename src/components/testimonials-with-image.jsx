@@ -55,11 +55,11 @@ const offsets = [
 const testimonials = [
   {
     id: 1,
-    name: "Amit Verma",
-    designation: "CTO, Fintech Startup",
-    company: "PayTech Solutions",
+    name: "Jignesh Mittal",
+    designation: "Proprietor",
+    company: "Rose Associates",
     quote:
-      "Their AI solutions helped us automate critical workflows and reduce manual effort by over 40%. The ROI was visible within the first quarter.",
+      "Intelidge built a complete automation system for Rose Associates that streamlined our 100–200 daily water orders through WhatsApp. The solution automated order capture, area-based delivery assignment, and status tracking using a simple Google Sheets backend. It significantly reduced manual coordination and improved accuracy while remaining easy for our non-technical staff to use.",
     rating: 5,
   },
   {
