@@ -55,7 +55,7 @@ const offsets = [
 const testimonials = [
   {
     id: 1,
-    name: "Jignesh Mittal",
+    name: "Ajay",
     designation: "Proprietor",
     company: "Rose Associates",
     quote:
