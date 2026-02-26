@@ -72,9 +72,7 @@ export function Navbar() {
         <motion.a
           href="#"
           className="relative flex items-center gap-3 py-2"
-          onClick={(e) => {
-            e.preventDefault()
-            window.scrollTo({ top: 0, behavior: "smooth" })
+          onClick={() => {
             setOpen(false)
           }}
           whileHover={{ scale: 1.02 }}
