@@ -189,33 +189,35 @@ export function TestimonialsStacked() {
                 exit="exit"
                 transition={{ duration: 0.4 }}
               >
-                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-xl">
-                  <Quote className="h-8 w-8 text-white" />
-                </div>
+                <div className="relative h-[260px] overflow-hidden">
+                  <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-xl">
+                    <Quote className="h-8 w-8 text-white" />
+                  </div>
 
-                <div className="mb-4 flex gap-1">
-                  {[...Array(testimonials[index].rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
+                  <div className="mb-4 flex gap-1">
+                    {[...Array(testimonials[index].rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                      />
+                    ))}
+                  </div>
 
-                <p className="mb-8 max-w-xl text-xl text-white/90">
-                  "{testimonials[index].quote}"
-                </p>
-
-                <div>
-                  <h3 className="text-xl font-semibold text-white">
-                    {testimonials[index].name}
-                  </h3>
-                  <p className="text-sm text-white/60">
-                    {testimonials[index].designation}
+                  <p className="mb-8 max-w-xl text-xl text-white/90">
+                    "{testimonials[index].quote}"
                   </p>
-                  <p className="text-sm text-blue-400">
-                    {testimonials[index].company}
-                  </p>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">
+                      {testimonials[index].name}
+                    </h3>
+                    <p className="text-sm text-white/60">
+                      {testimonials[index].designation}
+                    </p>
+                    <p className="text-sm text-blue-400">
+                      {testimonials[index].company}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
