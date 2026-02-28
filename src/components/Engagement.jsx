@@ -301,7 +301,7 @@ export function Engagement() {
         </motion.div>
 
         {/* ENHANCED CARDS - Bento Style */}
-        <div className="mt-12">
+        <div className="mt-12 min-h-[420px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
